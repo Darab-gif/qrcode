@@ -15,3 +15,7 @@
   border: 1px solid #e5e6e7;
   box-shadow: 5px 5px 6px #e5e6e7;
 }
+
+.download:hover {
+  box-shadow: 5px 15px 16px #e5e6e7;
+}

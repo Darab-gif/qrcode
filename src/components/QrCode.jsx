@@ -40,7 +40,17 @@ const QrCode = () => {
     downloadLink.click();
     document.body.removeChild(downloadLink);
   };
+  /*
+  //shareButton functionality
 
+  const handleShare = () => {
+    const file = document.getElementById("myqr");
+
+    if (navigator.share) {
+      console.log(file.nodeValue);
+      navigator.share({ file });
+    }
+  };*/
   return (
     <>
       <Header />
@@ -92,8 +102,12 @@ const QrCode = () => {
                 size={250}
                 includeMargin={true}
               />
-              <span className="cursor-pointer " onClick={handleDownload}>
-                <FaCloudDownloadAlt size={25} />
+
+              <span
+                className="cursor-pointer rounded-[2px] h-8 w-8 flex justify-center items-center bg-primary text-white"
+                onClick={handleDownload}
+              >
+                <FaCloudDownloadAlt size={20} />
               </span>
             </>
           ) : (
