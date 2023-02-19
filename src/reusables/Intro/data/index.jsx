@@ -4,7 +4,7 @@ import download from "../../../assets/download.png";
 export const data = [
   {
     head: "Create the content of your QR code",
-    info: "Select either text or file button to create the contents for your QR code",
+    info: "Select either text or url button to create the contents for your QR code",
     id: 1,
     icon: create,
   },
