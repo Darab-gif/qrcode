@@ -10,7 +10,8 @@ const QrCode = () => {
   const [text, setText] = useState("");
   const [url, setUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const [display, setDisplay] = useState(false);
+  const [displayText, setDisplayText] = useState(false);
+  const [displayUrl, setDisplayUrl] = useState(false);
   const [qr, setQr] = useState(false);
 
   const handleTextChange = (ev) => {
@@ -23,18 +24,21 @@ const QrCode = () => {
     setUrl(url);
   };
 
-  //handle to the text submit button
+  //handle text submit button
   const handleTextSubmit = (event) => {
     event.preventDefault();
     setText(text);
-
-    setDisplay(true);
+    setDisplayText(true);
   };
+
+  //handle url submit button
   const handleUrlSubmit = (event) => {
     event.preventDefault();
     setShortUrl(url);
-    setDisplay(true);
+    setDisplayUrl(true);
   };
+
+  //handle the switch functionality
   const handleSwitch = (ev) => {
     setQr(!ev);
   };
@@ -92,7 +96,7 @@ const QrCode = () => {
               </form>
 
               <div className="h-[17rem] w-[20rem] border-2 mt-8 border-grey flex justify-center gap-4 items-center mb-12">
-                {display ? (
+                {displayText ? (
                   <div className="flex flex-col gap-5 items-center justify-center">
                     <QRCode
                       value={text}
@@ -146,7 +150,7 @@ const QrCode = () => {
                 </div>
               </form>
               <div className="h-[17rem] w-[20rem] border-2 mt-8 border-grey flex justify-center gap-4 items-center mb-12">
-                {display ? (
+                {displayUrl ? (
                   <div className="flex flex-col gap-5 items-center justify-center">
                     <QRCode
                       value={shortUrl || ""}
